@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Simple templater.
+Simple templater based on [Template-Toolkit](http://template-toolkit.org) engine.
 
 
 # INSTALL
@@ -40,3 +40,12 @@ Simple templater.
     Hello, my name is [% name %]!
     I speak [% language %]
     
+
+
+# Author
+
+Alexey Melezhik
+
+# See also
+
+[Template-Toolkit](http://template-toolkit.org)
