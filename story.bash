@@ -1,6 +1,8 @@
-user=$(config user)
+owner=$(config owner)
 mode=$(config mode)
 target=$(config target)
+
+touch $target || exit 1
 
 if test -f $target && ! diff -q $test_root_dir/content.tmp $target ; then
     echo updating target $target ...
@@ -10,9 +12,9 @@ fi
 cp $test_root_dir/content.tmp $target || exit 1
 echo target $target updated
 
-if test "${user}"; then 
-  chown $user $target || exit 1;
-  echo set target owner to $user
+if test "${owner}"; then 
+  chown $owner $target || exit 1;
+  echo set target owner to $owner
 fi
 
 if test "${mode}"; then 
