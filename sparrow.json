@@ -1,6 +1,6 @@
 {
   "name" : "templater",
-  "version" : "0.0.2",
-  "descritpion": "Simple templater",
+  "version" : "0.0.3",
+  "description": "Simple templater",
   "url" : "https://github.com/melezhik/templater"  
 }
