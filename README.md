@@ -37,19 +37,19 @@ Simple templater based on [Template-Toolkit](http://template-toolkit.org) engine
 
 # Parameters
 
-# variables
+## variables
 
 A list of variables get passed into template. No default value. Optional.
 
-# target
+## target
 
 A file path to write a rendered template to. No default value. Should be set.
 
-# owner
+## owner
 
 Sets a target ownership to owner. No default value. Optional.
 
-# owner
+## group
 
 Sets a target group to group. No default value. Optional.
 
