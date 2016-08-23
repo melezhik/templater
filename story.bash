@@ -1,4 +1,5 @@
 owner=$(config owner)
+group=$(config group)
 mode=$(config mode)
 target=$(config target)
 
@@ -15,6 +16,11 @@ echo target $target updated
 if test "${owner}"; then 
   chown $owner $target || exit 1;
   echo set target owner to $owner
+fi
+
+if test "${group}"; then 
+  chgrp $group $target || exit 1;
+  echo set target group to $group
 fi
 
 if test "${mode}"; then 
