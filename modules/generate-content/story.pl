@@ -11,4 +11,4 @@ my $target = test_root_dir(); $target.="/content.tmp";
 
 $tt->process(\$source, $vars, $target) || die $tt->error(), "\n";
 
-print "content generated at $target";
+print "content generated at $target\n";
