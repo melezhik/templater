@@ -19,7 +19,7 @@ if test "${owner}"; then
 fi
 
 if test "${group}"; then 
-  chgrp $group $target || exit 1;
+  chown :$group $target || exit 1;
   echo set target group to $group
 fi
 
