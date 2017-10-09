@@ -7,7 +7,7 @@ task-run 'install my config', 'templater-dev', %(
     name => 'sparrowdo ...',
     language => 'perl6'
   ),
-  on_change => "echo trigger run",
+  #on_change => "echo trigger run",
   target  => '/tmp/out.txt',
   source  => slurp 'examples/foo.tmpl'
 );

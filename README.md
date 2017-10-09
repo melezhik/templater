@@ -12,20 +12,20 @@ Simple templater based on [Template-Toolkit](http://template-toolkit.org) engine
 
     $ cat sparrowfile
     
-    task-run 'install my config', 'templater', %(
+    task-run 'greetings file', 'templater', %(
       variables => %(
         name => 'sparrowdo',
         language => 'perl6'
       ),
-      target  => '/etc/foo.conf',
+      target  => '/etc/greetings.out',
       owner   => 'user',
       group   => 'user'
       mode    => '644',
-      source  => slurp 'templates/foo.conf.tmpl'
+      source  => slurp 'templates/greetings.tmpl'
     );
     
   
-    $ cat templates/foo.conf.tmpl
+    $ cat templates/greetings.tmp
   
     Hello, my name is [% name %]!
     I speak [% language %]
@@ -48,6 +48,21 @@ Sets a target ownership to owner. No default value. Optional.
 ## group
 
 Sets a target group to group. No default value. Optional.
+
+## on_change
+
+Sets the command to be executed when file changes:
+
+  task-run 'populate config', 'templater', %(
+    variables => %(
+      name => 'sparrowdo ...',
+      language => 'perl6'
+    ),
+    on_change => "echo trigger run",
+    target  => '/tmp/out.txt',
+    source  => slurp 'examples/foo.tmpl'
+  );
+  
 
 # Author
 
