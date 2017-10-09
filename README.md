@@ -53,15 +53,15 @@ Sets a target group to group. No default value. Optional.
 
 Sets the command to be executed when file changes:
 
-  task-run 'populate config', 'templater', %(
-    variables => %(
-      name => 'sparrowdo ...',
-      language => 'perl6'
-    ),
-    on_change => "echo trigger run",
-    target  => '/tmp/out.txt',
-    source  => slurp 'examples/foo.tmpl'
-  );
+    task-run 'populate config', 'templater', %(
+      variables => %(
+        name => 'sparrowdo ...',
+        language => 'perl6'
+      ),
+      on_change => "echo trigger run",
+      target  => '/tmp/out.txt',
+      source  => slurp 'examples/foo.tmpl'
+    );
   
 
 # Author
