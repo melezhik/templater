@@ -2,12 +2,19 @@ owner=$(config owner)
 group=$(config group)
 mode=$(config mode)
 target=$(config target)
+on_change=$(config on_change)
 
 touch $target || exit 1
 
 if test -f $target && ! diff -q $test_root_dir/content.tmp $target ; then
+
     echo updating target $target ...
+
     diff -u $test_root_dir/content.tmp $target
+
+    if test "${on_change}"; then
+      $on_change
+    fi
 fi
 
 cp $test_root_dir/content.tmp $target || exit 1

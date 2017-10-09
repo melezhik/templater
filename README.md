@@ -12,20 +12,16 @@ Simple templater based on [Template-Toolkit](http://template-toolkit.org) engine
 
     $ cat sparrowfile
     
-    task_run  %(
-      task => 'install my config',
-      plugin => 'templater',
-      parameters => %(
-        variables => %(
-          name => 'sparrowdo',
-          language => 'perl6'
-        ),
-        target  => '/etc/foo.conf',
-        owner   => 'user',
-        group   => 'user'
-        mode    => '644',
-        source  => slurp 'templates/foo.conf.tmpl'
-      )
+    task-run 'install my config', 'templater', %(
+      variables => %(
+        name => 'sparrowdo',
+        language => 'perl6'
+      ),
+      target  => '/etc/foo.conf',
+      owner   => 'user',
+      group   => 'user'
+      mode    => '644',
+      source  => slurp 'templates/foo.conf.tmpl'
     );
     
   
