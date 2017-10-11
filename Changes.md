@@ -1,3 +1,7 @@
+# 0.0.11
+
+on_change hook - use Bash eval
+
 # 0.0.9-10
 
 * Support triggers ( `on_change` parameter  )
