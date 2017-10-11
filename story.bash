@@ -14,7 +14,7 @@ if test -f $target && ! diff -q $test_root_dir/content.tmp $target ; then
 
     if test "${on_change}"; then
       echo running on change hook: $on_change
-      $on_change
+      eval $on_change
     fi
 fi
 
