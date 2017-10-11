@@ -13,6 +13,7 @@ if test -f $target && ! diff -q $test_root_dir/content.tmp $target ; then
     diff -u $test_root_dir/content.tmp $target
 
     if test "${on_change}"; then
+      echo running on change hook: $on_change
       $on_change
     fi
 fi
