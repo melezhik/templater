@@ -1,3 +1,7 @@
+# 0.0.12
+
+add message when file is updated
+
 # 0.0.11
 
 on_change hook - use Bash eval
