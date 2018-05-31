@@ -9,13 +9,15 @@ touch $target || exit 1
 if test -f $target && ! diff -q $test_root_dir/content.tmp $target ; then
 
     echo updating target $target ...
-
+    echo "outthentic_message: $target updated";
     diff -u $test_root_dir/content.tmp $target
 
     if test "${on_change}"; then
       echo running on change hook: $on_change
       eval $on_change
     fi
+else
+  echo "outthentic_message: $target not updated";
 fi
 
 cp $test_root_dir/content.tmp $target || exit 1
