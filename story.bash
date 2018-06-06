@@ -9,7 +9,9 @@ touch $target || exit 1
 if test -f $target && ! diff -q $test_root_dir/content.tmp $target ; then
 
     echo updating target $target ...
-    echo "outthentic_message: $target updated";
+
+    echo "outthentic_message: updated ok";
+
     diff -u $test_root_dir/content.tmp $target
 
     if test "${on_change}"; then
@@ -17,7 +19,7 @@ if test -f $target && ! diff -q $test_root_dir/content.tmp $target ; then
       eval $on_change
     fi
 else
-  echo "outthentic_message: $target not updated";
+  echo "outthentic_message: not changed";
 fi
 
 cp $test_root_dir/content.tmp $target || exit 1
